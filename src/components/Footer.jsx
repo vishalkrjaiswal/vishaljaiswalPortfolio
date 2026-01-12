@@ -1,0 +1,141 @@
+import {
+  ArrowUp,
+  Linkedin,
+  Instagram,
+  Github,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
+import { motion } from "framer-motion";
+
+export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
+  const socialLinks = [
+    { icon: <Linkedin size={18} />, href: "", label: "LinkedIn" },
+    { icon: <Instagram size={18} />, href: "", label: "Instagram" },
+    { icon: <Github size={18} />, href: "https://github.com/vishalkrjaiswal", label: "GitHub" },
+  ];
+
+  const quickLinks = [
+    { name: "Home", href: "#hero" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
+  return (
+    <footer className="px-6 py-12 mt-20">
+      <div className="max-w-6xl mx-auto">
+        {/* Glass background container */}
+        <motion.div 
+          className="backdrop-blur-lg bg-white/70 dark:bg-gray-900/70 rounded-xl p-8 border border-white/20 dark:border-gray-700/50 shadow-lg"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            {/* Branding */}
+            <motion.div variants={itemVariants} className="space-y-4">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">Vishal Kumar Jaiswal</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                Aspiring Full-Stack Developer creating meaningful web experiences.              </p>
+              <div className="flex space-x-4">
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors duration-300"
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {social.icon}
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Navigation (moved to right column on md+) */}
+            <motion.div variants={itemVariants} className="md:col-start-3 flex flex-col items-center md:items-center">
+              <h4 className="text-gray-900 dark:text-white font-medium mb-2 text-sm uppercase tracking-wider md:text-right">Navigation</h4>
+              <ul className="mt-2 space-y-3 md:text-right">
+                {quickLinks.map((link, index) => (
+                  <motion.li 
+                    key={index}
+                    whileHover={{ x: 2 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <a 
+                      href={link.href} 
+                      className="block hover:text-gray-900 dark:hover:text-white transition-colors duration-300 text-sm text-gray-600 dark:text-gray-300 md:text-right"
+                    >
+                      {link.name}
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            
+
+            {/* Newsletter removed */}
+          </div>
+
+          {/* Bottom bar */}
+          <motion.div 
+            className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700/50 flex flex-col items-center text-xs text-gray-600 dark:text-gray-400 space-y-4 sm:space-y-0 sm:flex-row sm:justify-between"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div>
+              <p>© {currentYear} Portfolio. All rights reserved.</p>
+            </div>
+            
+            <div className="flex items-center space-x-6">
+              <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">Privacy</a>
+              <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">Terms</a>
+              <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors">Cookies</a>
+              <motion.a
+                href="#hero"
+                aria-label="Back to top"
+                className="p-2 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300"
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ArrowUp size={16} />
+              </motion.a>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </footer>
+  );
+};
