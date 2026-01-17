@@ -11,7 +11,7 @@ const projects = [
     image: "/projects/revenuePulse.png",
     video: "",
     tags: ["React", "Node.js", "MongoDB", "TypeScript", "JWT Auth"],
-    demoUrl: "",
+    demoUrl: "https://revenue-pulse.vercel.app/",
     githubUrl: "https://github.com/vishalkrjaiswal/RevenuePulse",
     featured: true,
     accentColor: "from-emerald-500 to-teal-600",
