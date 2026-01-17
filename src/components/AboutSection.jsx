@@ -7,7 +7,7 @@ export const AboutSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const achievements = [
-    { number: "3", label: "Projects", icon: <Briefcase className="h-5 w-5" />, suffix: "" },
+    { number: "4+", label: "Projects", icon: <Briefcase className="h-5 w-5" />, suffix: "" },
     { number: "1+", label: "Years Learning", icon: <Calendar className="h-5 w-5" />, suffix: "" },
     { number: "DSA", label: "Problem Solving", icon: <Target className="h-5 w-5" />, suffix: "" },
     { number: "Open", label: "Internships & Roles", icon: <User className="h-5 w-5" />, suffix: "" }

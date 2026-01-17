@@ -25,7 +25,7 @@ const projects = [
     description: "Manage my crazy college schedule! Helps students organize assignments, track deadlines,.",
     image: "/projects/studySphere.png",
     tags: ["React", "Node.js", "JWT", "React Calender"],
-    demoUrl: "",
+    demoUrl: "https://study-sphere-phi.vercel.app/login",
     githubUrl: "https://github.com/vishalkrjaiswal/StudySphere",
     featured: true,
     accentColor: "from-purple-500 to-indigo-600",
