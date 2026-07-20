@@ -13,8 +13,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const socialLinks = [
-    { icon: <Linkedin size={18} />, href: "", label: "LinkedIn" },
-    { icon: <Instagram size={18} />, href: "", label: "Instagram" },
+    { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/vishal-jaiswal-57b152295", label: "LinkedIn" },
     { icon: <Github size={18} />, href: "https://github.com/vishalkrjaiswal", label: "GitHub" },
   ];
 

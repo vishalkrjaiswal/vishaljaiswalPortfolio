@@ -54,12 +54,15 @@ export const HeroSection = () => {
             <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
               <span className="block text-foreground">I'm Vishal Jaiswal</span>
               <motion.span className="block bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent mt-2" animate={{ backgroundPosition: ['0%', '100%', '0%'] }} transition={{ duration: 8, repeat: Infinity }} style={{ backgroundSize: '200% 100%' }}>
-                Full-Stack Web Developer
+                Full-Stack Developer
               </motion.span>
             </motion.h1>
 
             <motion.p className="text-lg sm:text-xl text-muted-foreground mt-6 mb-6 leading-relaxed max-w-2xl" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
-I build modern, responsive web applications using the MERN stack (React, Node.js, Express, MongoDB). Strong in problem-solving and data structures, with hands-on experience through real-world projects and a focus on clean, scalable code.            </motion.p>
+Full Stack Developer specializing in the MERN stack with TypeScript, Next.js, and Tailwind CSS. Experienced in building and integrating RESTful APIs, implementing JWT-based authentication and role-based access control , and delivering responsive, production-ready web applications. Strong foundation in Data Structures and Algorithms (350+ problems solved) with a 5-star HackerRank rating in C++ and Problem Solving.
+
+I'm committed to delivering quality code, learning from seniors, and growing into a strong asset for your team
+ </motion.p>
 
             {/* Achievements/stats removed per request */}
 
